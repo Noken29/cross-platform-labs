@@ -1,17 +1,44 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Завдання 1
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>
+      Виконав студент групи КН-31 Вербицький А. Т. варіант 2
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        Задано три числа.
+        Якщо всі вони кратні
+        5, то знайти їх суму.
+        В іншому випадку – куб суми.
+      </p>
+      <ion-item>
+        <ion-label position="floating">First number: </ion-label>
+        <ion-input type="number" #firstNumber></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Second number: </ion-label>
+        <ion-input type="number" #secondNumber></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Third number: </ion-label>
+        <ion-input type="number" #thirdNumber></ion-input>
+      </ion-item>
+      <ion-button id="calc-btn" (click)="calculate(firstNumber.value, secondNumber.value, thirdNumber.value)">Calculate</ion-button>
+    </ion-card-content>
+    <ion-item>
+      <p>Result: {{calcResult}}</p>
+    </ion-item>
+  </ion-card>
 </ion-content>
