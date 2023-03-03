@@ -1,0 +1,40 @@
+{
+  "magazines" : [
+    {
+      "name" : "Filmfare Magazine",
+      "number" : 4252461,
+      "releaseDate" : "2020-10-21T13:28:06.419Z",
+      "pagesNumber" : 30
+    },
+    {
+      "name" : "India Today Magazine",
+      "number" : 1351573,
+      "releaseDate" : "2020-12-01T13:28:06.419Z",
+      "pagesNumber" : 24
+    },
+    {
+      "name" : "TIME Magazine",
+      "number" : 7467424,
+      "releaseDate" : "2021-01-06T13:28:06.419Z",
+      "pagesNumber" : 34
+    },
+    {
+      "name" : "The Economist Magazine",
+      "number" : 5664865,
+      "releaseDate" : "2020-10-13T13:28:06.419Z",
+      "pagesNumber" : 12
+    },
+    {
+      "name" : "Outlook Magazine",
+      "number" : 5389835,
+      "releaseDate" : "2020-09-21T13:28:06.419Z",
+      "pagesNumber" : 18
+    },
+    {
+      "name" : "Forbes India Magazine",
+      "number" : 24879863,
+      "releaseDate" : "2021-06-03T13:28:06.419Z",
+      "pagesNumber" : 24
+    }
+  ]
+}

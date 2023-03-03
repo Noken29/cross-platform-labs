@@ -32,7 +32,7 @@ export class GraphPage implements OnInit {
         labels: data[0],
         datasets: [
           {
-            label: 'Графіу функції',
+            label: 'Графік функції',
             borderColor: 'blue',
             borderDashOffset: 0.0,
             pointRadius: 1,
