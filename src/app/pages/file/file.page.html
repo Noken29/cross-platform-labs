@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark" menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title> Лабораторні роботи </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>
+      Лабораторна робота №3
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>
+      Виконав студент групи КН-31 Вербицький А. Т. варіант 2
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Лабораторна робота №3
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text>
+        Необхідно додати у розроблений в попередній лабораторній роботі
+        застосунок сторінку для обробки JSON файлу отриманого з серверу.
+        Сторінку викликати у головному меню застосунку.
+      </ion-text>
+      <ion-item>
+        <ion-label position="floating">Type month number: </ion-label>
+        <ion-input type="number" #month></ion-input>
+      </ion-item>
+      <ion-button expand="block" (click)="fetchAll()">Get all</ion-button>
+      <ion-list *ngFor="let i of magazines">
+          <ion-label [ngStyle]="{color: getColor(month.value, i)}">
+            <h2>{{i.name + ', #' + i.number}}</h2>
+          </ion-label>
+          <ion-text>
+            <p>{{'Release Date: ' + i.releaseDate}},
+              {{'Number of pages: ' + i.pagesNumber}}</p>
+          </ion-text>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
