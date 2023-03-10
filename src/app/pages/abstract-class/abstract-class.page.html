@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark" menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title> Лабораторні роботи </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>
+      Лабораторна робота №4
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>
+      Виконав студент групи КН-31 Вербицький А. Т. варіант 2
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Лабораторна робота №4
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text>
+        Необхідно додати у розроблений в попередній лабораторній роботі
+        застосунок сторінку для роботи з абстрактними класами. Сторінку викликати
+        у головному меню застосунку.
+      </ion-text>
+      <ion-item>
+        <ion-label position="floating">Number of vehicles: </ion-label>
+        <ion-input type="number" #number></ion-input>
+      </ion-item>
+      <ion-button expand="block" (click)="generateVehicles(number.value)">Generate</ion-button>
+      <ion-list *ngFor="let i of vehicles">
+        <ion-label>
+          <h2>{{i.name}}</h2>
+        </ion-label>
+        <ion-text>
+          <p>{{'Cost: ' + i.cost()}}</p>
+        </ion-text>
+      </ion-list>
+      <ion-item>
+        <h2>Average planes cost: {{average('Plane')}}</h2>
+      </ion-item>
+      <ion-item>
+        <h2>Average ships cost: {{average('Ship')}}</h2>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
