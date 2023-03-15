@@ -3,6 +3,7 @@ import {VehicleModel} from "../../model/vehicle.model";
 import {PlaneModel} from "../../model/plane.model";
 import {ShipModel} from "../../model/ship.model";
 import {v4 as uuidv4} from 'uuid';
+import {CommonUtils} from "../../util/common.utils";
 
 @Component({
   selector: 'app-abstract-class',
@@ -27,13 +28,9 @@ export class AbstractClassPage implements OnInit {
 
   newVehicle(isPlane : boolean) {
     if (isPlane) {
-      return new PlaneModel('Plane#' + uuidv4(), this.randomIntFromInterval(4, 10), this.randomIntFromInterval(12, 40))
+      return new PlaneModel('Plane#' + uuidv4(), CommonUtils.randomIntFromInterval(4, 10), CommonUtils.randomIntFromInterval(12, 40))
     }
-    return new ShipModel('Ship#' + uuidv4(), this.randomIntFromInterval(1, 300), this.randomIntFromInterval(10000, 30000))
-  }
-
-  randomIntFromInterval(min : number, max : number) { // min and max included
-    return Math.floor(Math.random() * (max - min + 1) + min)
+    return new ShipModel('Ship#' + uuidv4(), CommonUtils.randomIntFromInterval(1, 300), CommonUtils.randomIntFromInterval(10000, 30000))
   }
 
   average(name : string) {
