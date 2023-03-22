@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { AbstractClassPageRoutingModule } from './abstract-class-routing.module';
 
 import { AbstractClassPage } from './abstract-class.page';
+import {InterfacepagePageModule} from "../interfacepage/interfacepage.module";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    AbstractClassPageRoutingModule
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        AbstractClassPageRoutingModule,
+        InterfacepagePageModule
+    ],
   declarations: [AbstractClassPage]
 })
 export class AbstractClassPageModule {

@@ -1,0 +1,18 @@
+<app-my-header title="Лабораторна робота №6"></app-my-header>
+<ion-content>
+  <ion-card>
+    <ion-card-title>
+      <ion-text>
+        <p>Сутність, Людина, Собака, Пташка, Чайка</p>
+      </ion-text>
+    </ion-card-title>
+    <ion-card-content>
+      <ion-button (click)="foo()">Get entities</ion-button>
+        <ion-list *ngFor="let i of entities">
+          <ion-text>
+            <p>{{i.sayAboutMe()}}</p>
+          </ion-text>
+        </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
