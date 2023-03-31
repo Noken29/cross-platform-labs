@@ -5,7 +5,6 @@ import {Entity} from "./entity";
 export class Dog extends Entity implements IWalkable, ISwimable {
   age? : number
 
-
   constructor(name: string, age: number) {
     super(name);
     this.age = age;
