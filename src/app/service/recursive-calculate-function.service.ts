@@ -8,14 +8,14 @@ export class RecursiveCalculateFunctionService {
 
   constructor(private tabulateService : TabFunctionService) { }
 
-  static recursiveSum(x : number, a : number, y : number, i : number, n : number) : number {
+  static recursiveSum(x : number, xNext : number, a : number, y : number, i : number, n : number) : number {
     if (i === n)
       return y
-    return this.recursiveSum(x * x, a * i, y + x / a, i + 1, n)
+    return this.recursiveSum(x, xNext * x, a * i, y + xNext / a, i + 1, n)
   }
 
-  calculate(x : number, n : number = 50) : number {
-    return RecursiveCalculateFunctionService.recursiveSum(x, 1, 1, 2, n)
+  calculate(x : number, n : number = 12) : number {
+    return RecursiveCalculateFunctionService.recursiveSum(x, x, 1, 1, 2, n)
   }
 
   tabulateFunction(a : number, b : number) {
