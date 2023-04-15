@@ -1,0 +1,43 @@
+<form [formGroup]="magazineForm" (ngSubmit)="onSubmit()">
+  <ion-card>
+      <ion-card-header>
+        <ion-card-title>Magazine</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Name:</ion-label>
+          <ion-input id="magazine-name" type="text" formControlName="magazineName"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Number:</ion-label>
+          <ion-input id="magazine-number" type="text" formControlName="magazineNumber"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Release Date:</ion-label>
+          <ion-input id="magazine-release-date" type="text" formControlName="magazineReleaseDate"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Pages Number:</ion-label>
+          <ion-input id="magazine-pages-number" type="number" formControlName="magazinePagesNumber"></ion-input>
+        </ion-item>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Articles</ion-card-title>
+          </ion-card-header>
+          <ion-card-content formArrayName="magazineArticles">
+            <ion-button (click)="pushArticle()">
+              <ion-icon slot="start" name="add"></ion-icon>
+              Add Article
+            </ion-button>
+            <ion-item *ngFor="let article of articles(); let i = index">
+              <ion-input type="text" formControlName="articleName{{i}}" placeholder="Article Name"></ion-input>
+              <ion-button (click)="removeArticle(i)">
+                <ion-icon slot="start" name="trash"></ion-icon>
+                Remove
+              </ion-button>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-card-content>
+  </ion-card>
+</form>

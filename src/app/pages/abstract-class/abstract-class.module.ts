@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AbstractClassPageRoutingModule } from './abstract-class-routing.module';
 
 import { AbstractClassPage } from './abstract-class.page';
-import {InterfacepagePageModule} from "../interfacepage/interfacepage.module";
+import {MyHeaderComponentModule} from "../../components/my-header/my-header.component.module";
 
 @NgModule({
     imports: [
@@ -15,7 +15,7 @@ import {InterfacepagePageModule} from "../interfacepage/interfacepage.module";
         FormsModule,
         IonicModule,
         AbstractClassPageRoutingModule,
-        InterfacepagePageModule
+        MyHeaderComponentModule
     ],
   declarations: [AbstractClassPage]
 })

@@ -4,11 +4,13 @@ export class MagazineModel {
   number? : number
   releaseDate? : Date
   pagesNumber? : number
+  articles? : string[]
 
-  constructor(name: string, number: number, releaseDate: Date, pagesNumber: number) {
+  constructor(name: string, number: number, releaseDate: Date, pagesNumber: number, articles? : string[]) {
     this.name = name;
     this.number = number;
     this.releaseDate = releaseDate;
     this.pagesNumber = pagesNumber;
+    this.articles = articles;
   }
 }

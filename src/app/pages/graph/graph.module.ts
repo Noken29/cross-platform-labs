@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { GraphPageRoutingModule } from './graph-routing.module';
 
 import { GraphPage } from './graph.page';
-import {InterfacepagePageModule} from "../interfacepage/interfacepage.module";
+import {MyHeaderComponentModule} from "../../components/my-header/my-header.component.module";
 
 @NgModule({
     imports: [
@@ -15,7 +15,7 @@ import {InterfacepagePageModule} from "../interfacepage/interfacepage.module";
         FormsModule,
         IonicModule,
         GraphPageRoutingModule,
-        InterfacepagePageModule
+        MyHeaderComponentModule
     ],
   declarations: [GraphPage]
 })

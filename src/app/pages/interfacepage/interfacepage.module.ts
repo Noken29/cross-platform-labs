@@ -7,18 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { InterfacepagePageRoutingModule } from './interfacepage-routing.module';
 
 import { InterfacepagePage } from './interfacepage.page';
-import {MyHeaderComponent} from "../../components/my-header/my-header.component";
+import {MyHeaderComponentModule} from "../../components/my-header/my-header.component.module";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    InterfacepagePageRoutingModule
+    InterfacepagePageRoutingModule,
+    MyHeaderComponentModule
   ],
-  exports: [
-    MyHeaderComponent
-  ],
-  declarations: [InterfacepagePage, MyHeaderComponent]
+  declarations: [InterfacepagePage]
 })
 export class InterfacepagePageModule {}

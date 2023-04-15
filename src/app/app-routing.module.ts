@@ -25,6 +25,10 @@ const routes: Routes = [
   {
     path: 'servicepage',
     loadChildren: () => import('./pages/servicepage/service-page.module').then(m => m.ServicePageModule)
+  },
+  {
+    path: 'reactive-form',
+    loadChildren: () => import('./pages/reactive-form/reactive-form.module').then(m => m.ReactiveFormPageModule)
   }
 ];
 @NgModule({
