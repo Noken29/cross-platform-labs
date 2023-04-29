@@ -9,6 +9,8 @@ import { ReactiveFormPageRoutingModule } from './reactive-form-routing.module';
 import { ReactiveFormPage } from './reactive-form.page';
 import {MyHeaderComponentModule} from "../../components/my-header/my-header.component.module";
 import {MagazineFormComponentModule} from "../../components/magazine-form/magazine-form.component.module";
+import {UpdateFormComponent} from "../../components/update-form/update-form.component";
+import {ViewFormComponent} from "../../components/viewform/view-form.component";
 
 @NgModule({
   imports: [
@@ -19,6 +21,6 @@ import {MagazineFormComponentModule} from "../../components/magazine-form/magazi
     MyHeaderComponentModule,
     MagazineFormComponentModule
   ],
-  declarations: [ReactiveFormPage]
+    declarations: [ReactiveFormPage, UpdateFormComponent, ViewFormComponent]
 })
 export class ReactiveFormPageModule {}

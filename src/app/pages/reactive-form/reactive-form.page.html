@@ -1,4 +1,6 @@
 <app-my-header title="Lab8"></app-my-header>
 <ion-content [fullscreen]="true">
-  <app-magazine-form></app-magazine-form>
+  <app-magazine-form (magazineAddEvent) = "magazineViewForm.pushModel($event)"></app-magazine-form>
+  <app-view-form #magazineViewForm></app-view-form>
+  <app-update-form [magazine] = "magazineViewForm.toUpdate"></app-update-form>
 </ion-content>

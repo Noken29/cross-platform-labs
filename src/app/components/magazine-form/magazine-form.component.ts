@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {MagazineModel} from "../../model/magazine.model";
 import {ValidatorDate, ValidatorNumber, ValidatorPagesNumber} from "../../common/validators";
@@ -13,6 +13,8 @@ export class MagazineFormComponent implements OnInit {
   magazineForm: FormGroup
   magazine?: MagazineModel
 
+  @Output() magazineAddEvent: EventEmitter<MagazineModel> = new EventEmitter<MagazineModel>()
+
   constructor(private fb : FormBuilder) {
     this.magazineForm = this.fb.group({
       magazineName: ['', Validators.required],
@@ -20,7 +22,7 @@ export class MagazineFormComponent implements OnInit {
       magazineReleaseDate: ['', [ValidatorDate]],
       magazinePagesNumber: ['', [Validators.required, ValidatorPagesNumber]],
       magazineArticles: this.fb.array([
-        this.fb.control('')
+        new FormControl
       ])
     })
   }
@@ -37,7 +39,16 @@ export class MagazineFormComponent implements OnInit {
     return (this.magazineForm.get('magazineArticles') as FormArray).controls
   }
 
-  onSubmit() {}
+  onSubmit() {
+    this.magazine = new MagazineModel(
+      this.magazineForm.value.magazineName,
+      this.magazineForm.value.magazineNumber,
+      this.magazineForm.value.magazineReleaseDate,
+      this.magazineForm.value.magazinePagesNumber,
+      this.magazineForm.value.magazineArticles
+    )
+    this.magazineAddEvent.emit(this.magazine)
+  }
 
   ngOnInit() {}
 

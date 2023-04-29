@@ -20,6 +20,9 @@
           <ion-label position="floating">Pages Number:</ion-label>
           <ion-input id="magazine-pages-number" type="number" formControlName="magazinePagesNumber"></ion-input>
         </ion-item>
+        <ion-item>
+          <ion-button (click)="onSubmit()">Submit</ion-button>
+        </ion-item>
         <ion-card>
           <ion-card-header>
             <ion-card-title>Articles</ion-card-title>
@@ -30,7 +33,7 @@
               Add Article
             </ion-button>
             <ion-item *ngFor="let article of articles(); let i = index">
-              <ion-input type="text" formControlName="articleName{{i}}" placeholder="Article Name"></ion-input>
+              <ion-input type="text" formControlName="{{i}}" placeholder="Article Name"></ion-input>
               <ion-button (click)="removeArticle(i)">
                 <ion-icon slot="start" name="trash"></ion-icon>
                 Remove

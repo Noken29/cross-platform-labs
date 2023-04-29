@@ -1,0 +1,15 @@
+<ion-card *ngFor="let magazine of magazines">
+  <ion-card-header>
+    <ion-title>{{magazine.name}}</ion-title>
+    <ion-card-subtitle>Number: {{magazine.number}}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    Released: {{magazine.releaseDate}}
+    Number of pages: {{magazine.pagesNumber}}
+    <h2>Articles</h2>
+    <ion-item *ngFor="let article of magazine.articles">
+      <p>{{article}}</p>
+    </ion-item>
+    <ion-button (click) = "update(magazine)">Update</ion-button>
+  </ion-card-content>
+</ion-card>
