@@ -29,6 +29,10 @@ const routes: Routes = [
   {
     path: 'reactive-form',
     loadChildren: () => import('./pages/reactive-form/reactive-form.module').then(m => m.ReactiveFormPageModule)
+  },
+  {
+    path: 'observablepage',
+    loadChildren: () => import('./pages/observablepage/observablepage.module').then(m => m.ObservablepagePageModule)
   }
 ];
 @NgModule({
