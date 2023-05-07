@@ -1,0 +1,57 @@
+{
+  "CityModel": [{
+    "name": "City#1",
+    "factories": [{
+      "name": "City#1_Factory#1",
+      "workers": 10,
+      "profit": 10000,
+      "square": 5,
+      "type": "FOOD"
+    }, {
+      "name": "City#1_Factory#2",
+      "workers": 10,
+      "profit": 10000,
+      "square": 5,
+      "type": "METALLURGY"
+    }, {
+      "name": "City#1_Factory#3",
+      "workers": 10,
+      "profit": 10000,
+      "square": 5,
+      "type": "TEXTILE"
+    }, {
+      "name": "City#1_Factory#4",
+      "workers": 150,
+      "profit": 500000,
+      "square": 30,
+      "type": "ENERGETIC"
+    }]
+  }, {
+    "name": "City#2",
+    "factories": [{
+      "name": "City#2_Factory#1",
+      "workers": 10,
+      "profit": 10000,
+      "square": 5,
+      "type": "FOOD"
+    }, {
+      "name": "City#2_Factory#2",
+      "workers": 10,
+      "profit": 10000,
+      "square": 5,
+      "type": "METALLURGY"
+    }, {
+      "name": "City#2_Factory#3",
+      "workers": 10,
+      "profit": 10000,
+      "square": 5,
+      "type": "TEXTILE"
+    }, {
+      "name": "City#2_Factory#4",
+      "workers": 150,
+      "profit": 500000,
+      "square": 30,
+      "type": "ENERGETIC"
+    }]
+  }]
+}

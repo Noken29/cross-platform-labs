@@ -13,14 +13,13 @@ import {Subscription} from "rxjs";
 export class ObservablepagePage implements OnInit, OnDestroy {
 
   cities : CityModel[] = []
-  citySubscription? : Subscription
   selectedCity? : CityModel
   selectedCityIndex? : number
+  citySub?: Subscription
 
   constructor(public cityModelRepository : CityModelRepository) { }
 
   handleCityChange(event : any) {
-    console.log(event)
     if (event.detail.value as number) {
       this.selectedCity = this.cities[event.detail.value]
       this.selectedCityIndex = event.detail.value as number
@@ -47,15 +46,22 @@ export class ObservablepagePage implements OnInit, OnDestroy {
       alert('Type factory name!')
       return
     }
+    if (factoryType === undefined || factoryType === '') {
+      alert('Select factory type!')
+      return
+    }
     let city = this.cities[this.selectedCityIndex]
+    if (city.factories === undefined)
+      city.factories = []
     city.factories.push(new FactoryModel(factoryName as string, factoryName as number, factoryWorkers as number, factorySquare as number, factoryType as FactoryType))
+    this.cityModelRepository.update(city)
   }
 
   ngOnInit() {
-    this.citySubscription = this.cityModelRepository.cities.subscribe((cities: CityModel[]) => {this.cities = cities})
+    this.citySub = this.cityModelRepository.citiesObservable?.subscribe(cities => this.cities = cities)
   }
 
   ngOnDestroy() {
-    this.citySubscription?.unsubscribe()
+    this.citySub?.unsubscribe()
   }
 }
